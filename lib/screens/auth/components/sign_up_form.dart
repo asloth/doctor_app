@@ -4,7 +4,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import '../../../constants.dart';
 
 class SignUpForm extends StatelessWidget {
-   SignUpForm({
+  SignUpForm({
     Key? key,
     required this.formKey,
   }) : super(key: key);
@@ -65,7 +65,9 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(hintText: "*****"),
-            validator: (pass) => MatchValidator(errorText: "Password do not  match").validateMatch(pass!, _password),
+            validator: (pass) =>
+                MatchValidator(errorText: "Password do not  match")
+                    .validateMatch(pass!, _password),
           ),
         ],
       ),

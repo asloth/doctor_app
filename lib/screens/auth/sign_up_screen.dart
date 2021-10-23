@@ -1,5 +1,6 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/screens/auth/sign_in_screen.dart';
+import 'package:doctor_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
@@ -43,10 +44,11 @@ class SignUpScreen extends StatelessWidget {
                         Text("Already have an account?"),
                         TextButton(
                           onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SignInScreen(),
-                              )),
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignInScreen(),
+                            ),
+                          ),
                           child: Text(
                             "Sign In!",
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -61,11 +63,17 @@ class SignUpScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            // Sign up form is done
-                            // It saved our inputs
-                            _formKey.currentState!.save();
-                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ),
+                          );
+                          //if (_formKey.currentState!.validate()) {
+                          // Sign up form is done
+                          // It saved our inputs
+                          //_formKey.currentState!.save();
+                          //}
                         },
                         child: Text("Sign Up"),
                       ),

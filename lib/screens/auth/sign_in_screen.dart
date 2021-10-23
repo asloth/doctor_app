@@ -1,4 +1,5 @@
 import 'package:doctor_app/screens/auth/sign_up_screen.dart';
+import 'package:doctor_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -65,15 +66,15 @@ class SignInScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => HomeScreen(),
                             ),
                           );
-                          if (_formKey.currentState!.validate()) {
-                            // Sign up form is done
-                            // It saved our inputs
-                            _formKey.currentState!.save();
-                            //  Sign in also done
-                          }
+                          //if (_formKey.currentState!.validate()) {
+                          // Sign up form is done
+                          // It saved our inputs
+                          //_formKey.currentState!.save();
+                          //  Sign in also done
+                          //}
                         },
                         child: Text("Sign In"),
                       ),
