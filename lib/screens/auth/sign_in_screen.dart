@@ -1,5 +1,6 @@
 import 'package:doctor_app/screens/auth/sign_up_screen.dart';
 import 'package:doctor_app/screens/home/home_screen.dart';
+import 'package:doctor_app/screens/navbar/navbar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -66,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
+                              builder: (context) => NavBarScreen(),
                             ),
                           );
                           //if (_formKey.currentState!.validate()) {
