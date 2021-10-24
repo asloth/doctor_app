@@ -33,9 +33,9 @@ class HealthPostCard extends StatelessWidget {
               height: cardHeight,
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(22),
-                    boxShadow: [defaultShadow]),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(22),
+                ),
               ),
             ),
             // Product title and price
