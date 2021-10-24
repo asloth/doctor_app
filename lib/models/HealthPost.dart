@@ -15,7 +15,7 @@ class HealthPost {
   });
 }
 
-List<HealthPost> health_posts = [
+List<HealthPost> healthPosts = [
   HealthPost(
     1,
     'Posta 1',

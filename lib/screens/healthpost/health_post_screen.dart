@@ -27,9 +27,9 @@ class HealthPostScreen extends StatelessWidget {
               child: Stack(
                 children: [
                   ListView.builder(
-                    itemCount: health_posts.length,
+                    itemCount: healthPosts.length,
                     itemBuilder: (context, index) => HealthPostCard(
-                      healthPost: health_posts[index],
+                      healthPost: healthPosts[index],
                       press: () {},
                     ),
                   ),
