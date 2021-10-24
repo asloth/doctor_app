@@ -23,6 +23,11 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Spacer(),
+                  Icon(
+                    Icons.local_hospital,
+                    color: Colors.white,
+                    size: 35,
+                  ),
                   RichText(
                     text: TextSpan(
                       text: 'Posta Virtual',

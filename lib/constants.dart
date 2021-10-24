@@ -8,6 +8,13 @@ const redColor = Color(0xFFE85050);
 
 const defaultPadding = 16.0;
 
+// our default Shadow
+const defaultShadow = BoxShadow(
+  offset: Offset(0, 15),
+  blurRadius: 27,
+  color: Colors.black12, // Black color with 12% opacity
+);
+
 OutlineInputBorder textFieldBorder = OutlineInputBorder(
   borderSide: BorderSide(
     color: primaryColor.withOpacity(0.1),
@@ -27,5 +34,3 @@ final passwordValidator = MultiValidator(
         errorText: 'passwords must have at least one special character')
   ],
 );
-
-
