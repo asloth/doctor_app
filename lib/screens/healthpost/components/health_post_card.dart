@@ -15,6 +15,7 @@ class HealthPostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    double cardHeight = 116;
 
     return Container(
       margin: EdgeInsets.symmetric(
@@ -29,13 +30,12 @@ class HealthPostCard extends StatelessWidget {
           children: <Widget>[
             // Those are our background
             Container(
-              height: 136,
+              height: cardHeight,
               child: Container(
-                margin: EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(22),
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(22),
+                    boxShadow: [defaultShadow]),
               ),
             ),
             // Product title and price
@@ -43,7 +43,7 @@ class HealthPostCard extends StatelessWidget {
               bottom: 0,
               left: 0,
               child: SizedBox(
-                height: 136,
+                height: cardHeight,
                 // our image take 200 width, thats why we set out total width - 200
                 width: size.width,
                 child: Column(
@@ -125,7 +125,7 @@ class HealthPostCard extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 20,
+              right: 10,
               bottom: 0,
               child: SizedBox(
                 child: Padding(
