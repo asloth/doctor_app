@@ -1,6 +1,7 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/screens/healthpost/health_post_screen.dart';
 import 'package:doctor_app/screens/home/home_screen.dart';
+import 'package:doctor_app/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -22,10 +23,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
       'Search',
       style: optionStyle,
     ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
+    ProfileScreen(),
   ];
 
   @override
