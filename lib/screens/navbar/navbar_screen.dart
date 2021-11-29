@@ -1,4 +1,5 @@
 import 'package:doctor_app/constants.dart';
+import 'package:doctor_app/screens/attention/attention_screen.dart';
 import 'package:doctor_app/screens/healthpost/health_post_screen.dart';
 import 'package:doctor_app/screens/home/home_screen.dart';
 import 'package:doctor_app/screens/profile/profile_screen.dart';
@@ -19,10 +20,7 @@ class _NavBarScreenState extends State<NavBarScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     HealthPostScreen(),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
+    AttentionScreen(),
     ProfileScreen(),
   ];
 
