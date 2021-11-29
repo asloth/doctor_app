@@ -34,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Create Account",
+                      "Crear una cuenta",
                       style: Theme.of(context)
                           .textTheme
                           .headline5!
@@ -42,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text("Already have an account?"),
+                        Text("¿Ya tienes una cuenta?"),
                         TextButton(
                           onPressed: () => Navigator.push(
                             context,
@@ -51,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "Sign In!",
+                            "¡Iniciar sesión!",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -76,7 +76,7 @@ class SignUpScreen extends StatelessWidget {
                           //_formKey.currentState!.save();
                           //}
                         },
-                        child: Text("Sign Up"),
+                        child: Text("Registrar"),
                       ),
                     ),
                   ],

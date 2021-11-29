@@ -24,14 +24,15 @@ OutlineInputBorder textFieldBorder = OutlineInputBorder(
 
 // I will explain it later
 
-const emailError = 'Enter a valid email address';
-const requiredField = "This field is required";
+const emailError = 'Introduzca una dirección de correo electrónico válida';
+const requiredField = "Este campo es obligatorio";
 
 final passwordValidator = MultiValidator(
   [
-    RequiredValidator(errorText: 'password is required'),
-    MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
+    RequiredValidator(errorText: 'se requiere contraseña'),
+    MinLengthValidator(8,
+        errorText: 'la contraseña debe tener al menos 8 dígitos'),
     PatternValidator(r'(?=.*?[#?!@$%^&*-])',
-        errorText: 'passwords must have at least one special character')
+        errorText: 'las contraseñas deben tener al menos un carácter especial')
   ],
 );

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Healthcare - Doctor Consultation App',
+      title: 'Atención médica: App de consulta médica',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         primaryColor: primaryColor,

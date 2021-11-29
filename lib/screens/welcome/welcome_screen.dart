@@ -52,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextButton.styleFrom(
                         backgroundColor: Color(0xFF6CD8D1),
                       ),
-                      child: Text("Sign Up"),
+                      child: Text("Registrar"),
                     ),
                   ),
                   Padding(
@@ -74,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                             side: BorderSide(color: Color(0xFF6CD8D1)),
                           ),
                         ),
-                        child: Text("Sign In"),
+                        child: Text("Iniciar Sesión"),
                       ),
                     ),
                   ),

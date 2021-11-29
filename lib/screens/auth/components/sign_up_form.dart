@@ -20,10 +20,11 @@ class SignUpForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextFieldName(text: "Username"),
+          TextFieldName(text: "Nombre de Usuario"),
           TextFormField(
-            decoration: InputDecoration(hintText: "theflutterway"),
-            validator: RequiredValidator(errorText: "Username is required"),
+            decoration: InputDecoration(hintText: ""),
+            validator:
+                RequiredValidator(errorText: "Requiere nombre de Usuario"),
             // Let's save our username
             onSaved: (username) => _userName = username!,
           ),
@@ -31,7 +32,7 @@ class SignUpForm extends StatelessWidget {
           // We will fixed the error soon
           // As you can see, it's a email field
           // But no @ on keybord
-          TextFieldName(text: "Email"),
+          TextFieldName(text: "Correo"),
           TextFormField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(hintText: "test@email.com"),
@@ -44,11 +45,12 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(hintText: "+123487697"),
-            validator: RequiredValidator(errorText: "Phone number is required"),
+            validator: RequiredValidator(
+                errorText: "¡Utilice un correo electrónico válido!"),
             onSaved: (phoneNumber) => _phoneNumber = phoneNumber!,
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Password"),
+          TextFieldName(text: "Contraseña"),
 
           TextFormField(
             // We want to hide our password
@@ -61,12 +63,12 @@ class SignUpForm extends StatelessWidget {
             onChanged: (pass) => _password = pass,
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Confirm Password"),
+          TextFieldName(text: "Confirma Contraseña"),
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(hintText: "*****"),
             validator: (pass) =>
-                MatchValidator(errorText: "Password do not  match")
+                MatchValidator(errorText: "La contraseña no coincide")
                     .validateMatch(pass!, _password),
           ),
         ],

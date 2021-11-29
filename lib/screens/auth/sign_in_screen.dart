@@ -34,7 +34,7 @@ class SignInScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Sign In",
+                      "Iniciar sesión",
                       style: Theme.of(context)
                           .textTheme
                           .headline5!
@@ -42,7 +42,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text("Don't have an account?"),
+                        Text("¿No tienes una cuenta?"),
                         TextButton(
                           onPressed: () => Navigator.push(
                             context,
@@ -51,7 +51,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "Sign Up!",
+                            "¡Registrate!",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -77,7 +77,7 @@ class SignInScreen extends StatelessWidget {
                           //  Sign in also done
                           //}
                         },
-                        child: Text("Sign In"),
+                        child: Text("Iniciar sesión"),
                       ),
                     ),
                   ],
