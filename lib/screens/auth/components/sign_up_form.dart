@@ -35,16 +35,17 @@ class SignUpForm extends StatelessWidget {
           TextFieldName(text: "Correo"),
           TextFormField(
             keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(hintText: "test@email.com"),
-            validator: EmailValidator(errorText: "Use a valid email!"),
+            decoration: InputDecoration(hintText: ""),
+            validator: EmailValidator(
+                errorText: "¡Utilice un correo electrónico válido!"),
             onSaved: (email) => _email = email!,
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Phone"),
+          TextFieldName(text: "Teléfono"),
           // Same for phone number
           TextFormField(
             keyboardType: TextInputType.phone,
-            decoration: InputDecoration(hintText: "+123487697"),
+            decoration: InputDecoration(hintText: ""),
             validator: RequiredValidator(
                 errorText: "¡Utilice un correo electrónico válido!"),
             onSaved: (phoneNumber) => _phoneNumber = phoneNumber!,
