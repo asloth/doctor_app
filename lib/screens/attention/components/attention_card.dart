@@ -6,6 +6,7 @@ class AttentionCard extends StatelessWidget {
     this.date,
     this.medico,
     this.press,
+    this.diagnose,
     this.conclusion, {
     Key? key,
   }) : super(key: key);
@@ -14,6 +15,7 @@ class AttentionCard extends StatelessWidget {
   final String date;
   final String medico;
   final String conclusion;
+  final String diagnose;
 
   @override
   Widget build(BuildContext context) {
@@ -41,82 +43,67 @@ class AttentionCard extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              defaultPadding,
-              0,
-              defaultPadding,
-              defaultPadding,
-            ),
-            child: RichText(
-              text: TextSpan(
-                text: 'Fecha de atención: ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-                children: [
-                  TextSpan(
-                      text: "$date",
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                      )),
-                ],
-              ),
-            ),
+          AttentionItem(
+            info: date,
+            description: 'Fecha de atención: ',
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              defaultPadding,
-              0,
-              defaultPadding,
-              defaultPadding,
-            ),
-            child: RichText(
-              text: TextSpan(
-                text: 'Médico a cargo: ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-                children: [
-                  TextSpan(
-                      text: "$medico",
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                      )),
-                ],
-              ),
-            ),
+          AttentionItem(
+            info: medico,
+            description: 'Médico a cargo: ',
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(
-              defaultPadding,
-              0,
-              defaultPadding,
-              defaultPadding,
-            ),
-            child: RichText(
-              text: TextSpan(
-                text: 'Conclusiones: ',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-                children: [
-                  TextSpan(
-                      text: "$conclusion",
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                      )),
-                ],
-              ),
-            ),
+          AttentionItem(
+            info: diagnose,
+            description: 'Diagóstico: ',
+          ),
+          AttentionItem(
+            info: conclusion,
+            description: 'Recomendaciones: ',
+          ),
+          AttentionItem(
+            info: conclusion,
+            description: 'Receta: ',
           ),
         ],
+      ),
+    );
+  }
+}
+
+class AttentionItem extends StatelessWidget {
+  const AttentionItem({
+    Key? key,
+    required this.info,
+    required this.description,
+  }) : super(key: key);
+
+  final String info;
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        defaultPadding,
+        0,
+        defaultPadding,
+        defaultPadding,
+      ),
+      child: RichText(
+        text: TextSpan(
+          text: description,
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
+          children: [
+            TextSpan(
+                text: "$info",
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                )),
+          ],
+        ),
       ),
     );
   }

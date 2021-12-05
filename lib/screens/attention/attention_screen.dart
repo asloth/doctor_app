@@ -30,6 +30,7 @@ class AttentionScreen extends StatelessWidget {
                         '02-04-21',
                         'Dr. Asma Khan',
                         () {},
+                        'Gripe severa',
                         'Se recomendó paracetamol cada 8h por 5 días'),
                   )
                 ],
