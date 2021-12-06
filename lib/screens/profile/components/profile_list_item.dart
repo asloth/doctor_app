@@ -5,8 +5,10 @@ class ProfileListItem extends StatelessWidget {
   final IconData icon;
   final String text;
   final bool hasNavigation;
+  final Function() press;
 
-  const ProfileListItem({
+  const ProfileListItem(
+    this.press, {
     Key? key,
     this.icon = Icons.access_alarm_outlined,
     this.text = 'prueba',
@@ -45,10 +47,12 @@ class ProfileListItem extends StatelessWidget {
           ),
           Spacer(),
           if (this.hasNavigation)
-            Icon(
-              Icons.arrow_forward,
-              size: spacingUnit * 2.5,
-            ),
+            IconButton(
+                onPressed: this.press,
+                icon: Icon(
+                  Icons.arrow_forward,
+                  size: spacingUnit * 2.5,
+                )),
         ],
       ),
     );
