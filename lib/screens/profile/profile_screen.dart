@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:doctor_app/screens/profile/components/profile_header.dart';
 import 'components/profile_list_item.dart';
 import 'package:doctor_app/screens/profile/hystory_screen.dart';
+import 'package:doctor_app/screens/profile/editar_screen.dart';
+import 'package:doctor_app/screens/welcome/welcome_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -21,7 +23,12 @@ class ProfileScreen extends StatelessWidget {
                 child: ListView(
               children: <Widget>[
                 ProfileListItem(
-                  () {},
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EditarScreen()),
+                    );
+                  },
                   icon: Icons.person,
                   text: 'Editar mis datos',
                 ),
@@ -46,7 +53,12 @@ class ProfileScreen extends StatelessWidget {
                   text: 'Configuración',
                 ),
                 ProfileListItem(
-                  () {},
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                    );
+                  },
                   icon: Icons.logout,
                   text: 'Cerrar sesión',
                   hasNavigation: false,

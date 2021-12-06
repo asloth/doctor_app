@@ -20,7 +20,7 @@ class HistoryForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextField(
-            //maxLength: 8,
+            maxLength: 8,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               labelText: "Documento de Identidad:",
@@ -279,14 +279,6 @@ class HistoryForm extends StatelessWidget {
     );
   }
 }
-
-/*
-TextFieldName(text: "Primer nombre:"),
-          _emailInput(),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-          ), //2
- */
 
 class TextFieldName extends StatelessWidget {
   const TextFieldName({

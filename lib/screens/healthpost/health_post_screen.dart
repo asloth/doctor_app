@@ -18,7 +18,7 @@ class HealthPostScreen extends StatelessWidget {
                 'Postas más cercanas',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),

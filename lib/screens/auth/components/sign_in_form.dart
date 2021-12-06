@@ -21,16 +21,14 @@ class SignInForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextFieldName(text: "Correo"),
+          TextFieldName(text: "Documento de Identidad:"),
           TextFormField(
-            keyboardType: TextInputType.emailAddress,
+            maxLength: 8,
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(hintText: ""),
-            validator: EmailValidator(
-                errorText: "¡Utilice un correo electrónico válido!"),
-            onSaved: (email) => _email = email!,
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Contraseña"),
+          TextFieldName(text: "Contraseña:"),
           TextFormField(
             // We want to hide our password
             obscureText: true,

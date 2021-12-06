@@ -40,21 +40,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Spacer(),
                   // As you can see we need more paddind on our btn
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
-                        ),
-                      ),
-                      style: TextButton.styleFrom(
-                        backgroundColor: Color(0xFF6CD8D1),
-                      ),
-                      child: Text("Registrar"),
-                    ),
-                  ),
+
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(vertical: defaultPadding),
@@ -76,6 +62,21 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                         child: Text("Iniciar Sesión"),
                       ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpScreen(),
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Color(0xFF6CD8D1),
+                      ),
+                      child: Text("Registrar"),
                     ),
                   ),
                   const SizedBox(height: defaultPadding),

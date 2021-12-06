@@ -1,8 +1,8 @@
-import 'package:doctor_app/screens/attention/components/attention_card.dart';
 import 'package:flutter/material.dart';
+import 'package:doctor_app/screens/profile/components/chat_card.dart';
 
-class AttentionScreen extends StatelessWidget {
-  const AttentionScreen({Key? key}) : super(key: key);
+class ChatScreen extends StatelessWidget {
+  const ChatScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,8 @@ class AttentionScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Text(
-                'Atenciones recibidas',
-                textAlign: TextAlign.center,
+                'Mi Chat',
+                textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -27,11 +27,9 @@ class AttentionScreen extends StatelessWidget {
                   ListView.builder(
                     itemCount: 6,
                     itemBuilder: (context, index) => AttentionCard(
-                        '02-04-21',
-                        'Dr. Asma Khan',
-                        () {},
-                        'Gripe severa',
-                        'Se recomendó paracetamol cada 8h por 5 días'),
+                      'Si',
+                      () {},
+                    ),
                   )
                 ],
               ),

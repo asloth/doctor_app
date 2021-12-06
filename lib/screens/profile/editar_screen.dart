@@ -3,10 +3,10 @@ import 'package:doctor_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:doctor_app/screens/profile/profile_screen.dart';
-import 'components/hystory_form.dart';
-import 'package:doctor_app/screens/profile/editar_screen.dart';
+import 'components/editar_form.dart';
+import 'package:doctor_app/screens/home/home_screen.dart';
 
-class HystoryScreen extends StatelessWidget {
+class EditarScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -31,7 +31,7 @@ class HystoryScreen extends StatelessWidget {
                   children: [
                     const SizedBox(height: defaultPadding),
                     Text(
-                      'Historia Clínica',
+                      'Editar mis Datos',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
@@ -39,20 +39,21 @@ class HystoryScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: defaultPadding),
-                    HistoryForm(formKey: _formKey),
+                    EditarForm(formKey: _formKey),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => EditarScreen(),
+                            //Corregir este pageRoute
+                            builder: (context) => HomeScreen(),
                           ),
                         ),
                         style: TextButton.styleFrom(
                           backgroundColor: Color(0xFF6CD8D1),
                         ),
-                        child: Text("Editar Datos"),
+                        child: Text("Guardar"),
                       ),
                     ),
                     const SizedBox(height: defaultPadding * 2),

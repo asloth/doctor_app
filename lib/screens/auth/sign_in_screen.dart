@@ -57,7 +57,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: defaultPadding * 2),
+                    const SizedBox(height: defaultPadding / 2),
                     SignInForm(formKey: _formKey),
                     const SizedBox(height: defaultPadding * 2),
                     SizedBox(

@@ -33,6 +33,7 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: defaultPadding),
                     Text(
                       "Crear una cuenta",
                       style: Theme.of(context)
@@ -57,9 +58,9 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: defaultPadding * 2),
+                    const SizedBox(height: defaultPadding * 1),
                     SignUpForm(formKey: _formKey),
-                    const SizedBox(height: defaultPadding * 2),
+                    const SizedBox(height: defaultPadding * 1),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -79,6 +80,7 @@ class SignUpScreen extends StatelessWidget {
                         child: Text("Registrar"),
                       ),
                     ),
+                    const SizedBox(height: defaultPadding * 1),
                   ],
                 ),
               ),

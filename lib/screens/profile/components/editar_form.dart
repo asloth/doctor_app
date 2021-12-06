@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
-
 import '../../../constants.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 
-class SignUpForm extends StatelessWidget {
-  SignUpForm({
+class EditarForm extends StatelessWidget {
+  EditarForm({
     Key? key,
     required this.formKey,
   }) : super(key: key);
 
   final GlobalKey formKey;
+  bool _value = false;
+  int val = -1;
 
   late String _userName, _email, _password, _phoneNumber;
 
@@ -19,31 +21,7 @@ class SignUpForm extends StatelessWidget {
       key: formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextFieldName(text: "Documento de Identidad:"),
-          TextField(
-            maxLength: 8,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(hintText: ""),
-          ),
-          const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Nombres completos:"),
-          TextFormField(
-            decoration: InputDecoration(hintText: ""),
-            validator:
-                RequiredValidator(errorText: "Requiere llenar este campo"),
-            // Let's save our username
-            onSaved: (username) => _userName = username!,
-          ),
-          TextFieldName(text: "Apellidos completos:"),
-          TextFormField(
-            decoration: InputDecoration(hintText: ""),
-            validator:
-                RequiredValidator(errorText: "Requiere llenar este campo"),
-            // Let's save our username
-            onSaved: (username) => _userName = username!,
-          ),
-          const SizedBox(height: defaultPadding),
+        children: <Widget>[
           TextFieldName(text: "Teléfono:"),
           // Same for phone number
           TextFormField(
