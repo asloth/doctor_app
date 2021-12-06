@@ -11,7 +11,12 @@ class SignUpForm extends StatelessWidget {
 
   final GlobalKey formKey;
 
-  late String _userName, _email, _password, _phoneNumber;
+  late String _userName,
+      _email,
+      _password,
+      _phoneNumber,
+      _emergencyPhoneNumber,
+      _address;
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +100,15 @@ class SignUpForm extends StatelessWidget {
             validator: (pass) =>
                 MatchValidator(errorText: "La contraseña no coincide")
                     .validateMatch(pass!, _password),
+          ),
+          const SizedBox(height: defaultPadding),
+          TextFieldName(text: "Dirección de vivienda actual"),
+          TextFormField(
+            obscureText: true,
+            decoration: InputDecoration(hintText: ""),
+            validator: RequiredValidator(errorText: "Requiere una dirección"),
+            // Let's save our username
+            onSaved: (address) => _address = address!,
           ),
         ],
       ),

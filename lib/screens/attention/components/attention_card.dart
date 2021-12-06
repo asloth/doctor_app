@@ -53,7 +53,7 @@ class AttentionCard extends StatelessWidget {
           ),
           AttentionItem(
             info: diagnose,
-            description: 'Diagóstico: ',
+            description: 'Diagnóstico: ',
           ),
           AttentionItem(
             info: conclusion,
