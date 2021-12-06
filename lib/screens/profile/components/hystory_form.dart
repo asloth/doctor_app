@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:form_field_validator/form_field_validator.dart';
-
 import '../../../constants.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 
 class HistoryForm extends StatelessWidget {
   HistoryForm({
@@ -10,8 +9,8 @@ class HistoryForm extends StatelessWidget {
   }) : super(key: key);
 
   final GlobalKey formKey;
-
-  late String _userName, _email, _password, _phoneNumber;
+  bool _value = false;
+  int val = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -19,64 +18,275 @@ class HistoryForm extends StatelessWidget {
       key: formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextFieldName(text: "Nombre de Usuario"),
-          TextFormField(
-            decoration: InputDecoration(hintText: ""),
-            validator:
-                RequiredValidator(errorText: "Requiere nombre de Usuario"),
-            // Let's save our username
-            onSaved: (username) => _userName = username!,
+        children: <Widget>[
+          TextField(
+            //maxLength: 8,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: "Documento de Identidad:",
+              hintText: "Inserte su primer DNI",
+              //enabled: false,
+            ),
           ),
           const SizedBox(height: defaultPadding),
-          // We will fixed the error soon
-          // As you can see, it's a email field
-          // But no @ on keybord
-          TextFieldName(text: "Correo"),
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(hintText: ""),
-            validator: EmailValidator(
-                errorText: "¡Utilice un correo electrónico válido!"),
-            onSaved: (email) => _email = email!,
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Primer nombre:",
+              hintText: "Inserte su primer nombre",
+              //enabled: false,
+            ),
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Teléfono"),
-          // Same for phone number
-          TextFormField(
-            keyboardType: TextInputType.phone,
-            decoration: InputDecoration(hintText: ""),
-            validator: RequiredValidator(
-                errorText: "¡Utilice un correo electrónico válido!"),
-            onSaved: (phoneNumber) => _phoneNumber = phoneNumber!,
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Segundo nombre:",
+              hintText: "Inserte su segundo nombre",
+              //enabled: false,
+            ),
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Contraseña"),
-
-          TextFormField(
-            // We want to hide our password
-            obscureText: true,
-            decoration: InputDecoration(hintText: "******"),
-            validator: passwordValidator,
-            onSaved: (password) => _password = password!,
-            // We also need to validate our password
-            // Now if we type anything it adds that to our password
-            onChanged: (pass) => _password = pass,
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Apellido paterno:",
+              hintText: "Inserte su apellido paterno",
+              //enabled: false,
+            ),
           ),
           const SizedBox(height: defaultPadding),
-          TextFieldName(text: "Confirma Contraseña"),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(hintText: "*****"),
-            validator: (pass) =>
-                MatchValidator(errorText: "La contraseña no coincide")
-                    .validateMatch(pass!, _password),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Apellido materno:",
+              hintText: "Inserte su apellido materno",
+              //enabled: false,
+            ),
           ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: ["ESSALUD", "FF.AA", "SIS"],
+            label: "Tipo de Seguro",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "SIS",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99",
+              "100",
+            ],
+            label: "Edad",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "20",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: [
+              "Femenino",
+              "Masculino",
+            ],
+            label: "Sexo",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "Femenino",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Ocupación:",
+              hintText: "Inserte su ocuapción",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Lugar de Nacimiento:",
+              hintText: "Inserte su lugar de nacimiento",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Dirección:",
+              hintText: "Inserte su dirección",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: ["Soltero", "Casado", "Conviviente"],
+            label: "Grado de Instrucción:",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "Soltero",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: ["Primaria", "Secundaria", "Superior", "Técnico", "Otro"],
+            label: "Estado Civil",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "Superior",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            maxLines: 4,
+            decoration: InputDecoration(
+              labelText: "Alergia a medicamentos:",
+              hintText: "Detalle sus alergias",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Peso:",
+              hintText: "Inserte su peso (kg)",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          TextField(
+            decoration: InputDecoration(
+              labelText: "Talla:",
+              hintText: "Inserte su talla (m)",
+              //enabled: false,
+            ),
+          ),
+          const SizedBox(height: defaultPadding),
+          DropdownSearch(
+            mode: Mode.MENU,
+            items: ["Si", "No"],
+            label: "Factor de Riesgo",
+            popupItemDisabled: (String s) => s.startsWith('I'),
+            onChanged: print,
+            selectedItem: "No",
+            enabled: false,
+          ),
+          const SizedBox(height: defaultPadding),
         ],
       ),
     );
   }
 }
+
+/*
+TextFieldName(text: "Primer nombre:"),
+          _emailInput(),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+          ), //2
+ */
 
 class TextFieldName extends StatelessWidget {
   const TextFieldName({
@@ -89,10 +299,10 @@ class TextFieldName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: defaultPadding / 3),
+      padding: const EdgeInsets.only(bottom: defaultPadding / 6),
       child: Text(
         text,
-        style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54),
+        style: TextStyle(fontWeight: FontWeight.w900, color: Colors.black),
       ),
     );
   }

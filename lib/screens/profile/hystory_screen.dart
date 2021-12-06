@@ -3,6 +3,7 @@ import 'package:doctor_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'components/hystory_form.dart';
+import 'package:doctor_app/screens/profile/profile_screen.dart';
 
 class HystoryScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -27,6 +28,7 @@ class HystoryScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: defaultPadding),
                     Text(
                       'Historia Clínica',
                       style: TextStyle(
@@ -35,8 +37,24 @@ class HystoryScreen extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: defaultPadding * 2),
+                    const SizedBox(height: defaultPadding),
                     HistoryForm(formKey: _formKey),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HystoryScreen(),
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color(0xFF6CD8D1),
+                        ),
+                        child: Text("Editar Datos"),
+                      ),
+                    ),
+                    const SizedBox(height: defaultPadding * 2),
                   ],
                 ),
               ),
