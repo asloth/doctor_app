@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:doctor_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:doctor_app/screens/profile/profile_screen.dart';
+import 'package:doctor_app/screens/navbar/navbar_screen.dart';
 import 'components/editar_form.dart';
 import 'package:doctor_app/screens/home/home_screen.dart';
 
@@ -47,13 +47,36 @@ class EditarScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             //Corregir este pageRoute
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => NavBarScreen(),
                           ),
                         ),
                         style: TextButton.styleFrom(
                           backgroundColor: Color(0xFF6CD8D1),
                         ),
                         child: Text("Guardar"),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => NavBarScreen(),
+                              )),
+                          style: TextButton.styleFrom(
+                            // backgroundColor: Color(0xFF6CD8D1),
+                            elevation: 0,
+                            backgroundColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Color(0xFF6CD8D1)),
+                            ),
+                          ),
+                          child: Text("Cancelar"),
+                        ),
                       ),
                     ),
                     const SizedBox(height: defaultPadding * 2),

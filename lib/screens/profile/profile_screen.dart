@@ -42,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
                   icon: Icons.history,
                   text: 'Historial clínico',
                 ),
-                ProfileListItem(
+                /*ProfileListItem(
                   () {},
                   icon: Icons.file_copy,
                   text: 'Subir copia de mi DNI',
@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
                   () {},
                   icon: Icons.settings,
                   text: 'Configuración',
-                ),
+                ),*/
                 ProfileListItem(
                   () {
                     Navigator.push(
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                   },
                   icon: Icons.logout,
                   text: 'Cerrar sesión',
-                  hasNavigation: false,
+                  //hasNavigation: false,
                 ),
               ],
             ))

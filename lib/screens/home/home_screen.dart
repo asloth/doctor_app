@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/screens/home/components/live_attention.dart';
+import 'package:doctor_app/screens/home/components/C1.dart';
 import 'package:flutter/material.dart';
 
 import 'package:doctor_app/screens/profile/chat_screen.dart';
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             LiveAttention(),
+            C1Attention(),
             Spacer(),
             Align(
               alignment: Alignment.bottomRight,

@@ -23,41 +23,40 @@ class HistoryForm extends StatelessWidget {
             maxLength: 8,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
-              labelText: "Documento de Identidad:",
+              labelText: "75904782",
               hintText: "Inserte su primer DNI",
-              //enabled: false,
+              enabled: false,
             ),
           ),
-          const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Primer nombre:",
+              labelText: "Juan",
               hintText: "Inserte su primer nombre",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Segundo nombre:",
+              labelText: "Alfonso",
               hintText: "Inserte su segundo nombre",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Apellido paterno:",
+              labelText: "Perez",
               hintText: "Inserte su apellido paterno",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Apellido materno:",
+              labelText: "Tirado",
               hintText: "Inserte su apellido materno",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
@@ -191,31 +190,31 @@ class HistoryForm extends StatelessWidget {
             label: "Sexo",
             popupItemDisabled: (String s) => s.startsWith('I'),
             onChanged: print,
-            selectedItem: "Femenino",
+            selectedItem: "Masculino",
             enabled: false,
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Ocupación:",
+              labelText: "Administrador",
               hintText: "Inserte su ocuapción",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Lugar de Nacimiento:",
+              labelText: "Chiclayo",
               hintText: "Inserte su lugar de nacimiento",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Dirección:",
+              labelText: "Polonia 222",
               hintText: "Inserte su dirección",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
@@ -242,25 +241,25 @@ class HistoryForm extends StatelessWidget {
           TextField(
             maxLines: 4,
             decoration: InputDecoration(
-              labelText: "Alergia a medicamentos:",
+              labelText: "Amoxicilina y penicilina",
               hintText: "Detalle sus alergias",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Peso:",
+              labelText: "58",
               hintText: "Inserte su peso (kg)",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),
           TextField(
             decoration: InputDecoration(
-              labelText: "Talla:",
+              labelText: "1.60",
               hintText: "Inserte su talla (m)",
-              //enabled: false,
+              enabled: false,
             ),
           ),
           const SizedBox(height: defaultPadding),

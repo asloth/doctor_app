@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 import 'package:doctor_app/screens/profile/chat_screen.dart';
 
-class LiveAttention extends StatelessWidget {
-  const LiveAttention({
+class C1Attention extends StatelessWidget {
+  const C1Attention({
     Key? key,
   }) : super(key: key);
 
@@ -43,7 +43,7 @@ class LiveAttention extends StatelessWidget {
               bottom: 15.0,
             ),
             child: Text(
-              'C.S. José Leonardo Ortiz',
+              'P.S. Cristo Salvador',
               style: TextStyle(
                 fontSize: 18,
               ),

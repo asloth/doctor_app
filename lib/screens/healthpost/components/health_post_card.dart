@@ -1,6 +1,7 @@
 import 'package:doctor_app/constants.dart';
 import 'package:doctor_app/models/HealthPost.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HealthPostCard extends StatelessWidget {
   const HealthPostCard({
@@ -127,7 +128,7 @@ class HealthPostCard extends StatelessWidget {
             Positioned(
               right: 10,
               bottom: 0,
-              child: SizedBox(
+              child: InkWell(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: defaultPadding / 2,
@@ -137,6 +138,7 @@ class HealthPostCard extends StatelessWidget {
                     color: primaryColor,
                   ),
                 ),
+                onTap: () => launch('https://www.google.com.pe/maps'),
               ),
             )
           ],

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:doctor_app/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:doctor_app/screens/profile/profile_screen.dart';
 import 'components/hystory_form.dart';
 import 'package:doctor_app/screens/profile/editar_screen.dart';
 

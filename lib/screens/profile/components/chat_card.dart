@@ -1,14 +1,17 @@
 import 'package:doctor_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class AttentionCard extends StatelessWidget {
-  const AttentionCard(
+class ChatCard extends StatelessWidget {
+  const ChatCard(
+    this.medico,
     this.date,
     this.press, {
     Key? key,
   }) : super(key: key);
 
   final Function() press;
+  final String medico;
   final String date;
 
   @override
@@ -30,7 +33,7 @@ class AttentionCard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(13.0),
               child: Text(
-                'Dr. Cecilia Zapata',
+                medico,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -38,9 +41,26 @@ class AttentionCard extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: defaultPadding),
+          AttentionItem(
+            info: medico,
+            description: 'Médico: ',
+          ),
           AttentionItem(
             info: date,
-            description: 'Seguimiento:',
+            description: 'Seguimiento: ',
+          ),
+          InkWell(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(13, 0, 13, 13),
+              child: Text(
+                'Ingresar a Consulta',
+                style: TextStyle(
+                  color: Color(0xFF494980),
+                ),
+              ),
+            ),
+            onTap: () => launch('https://meet.google.com/mav-cocj-yjw'),
           ),
         ],
       ),
